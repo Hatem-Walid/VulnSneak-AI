@@ -4,6 +4,7 @@ using Agent_Background_temporary.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Agent_Background_temporary.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260426123112_addColumns_Confidence_RepairedCode_Explanation_ModelUsed_RepairSuccess_in_VulnResults_Table")]
+    partial class addColumns_Confidence_RepairedCode_Explanation_ModelUsed_RepairSuccess_in_VulnResults_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,19 +100,19 @@ namespace Agent_Background_temporary.Migrations
                     b.Property<double>("Confidence")
                         .HasColumnType("float");
 
-                    b.Property<double>("ElapsedSecs")
-                        .HasColumnType("float");
-
                     b.Property<int>("EndLine")
                         .HasColumnType("int");
 
                     b.Property<string>("Explanation")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ExternalApiReport")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ModelUsed")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RepairError")
+                    b.Property<string>("RepairCodeSnippet")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("RepairSuccess")
@@ -123,9 +126,6 @@ namespace Agent_Background_temporary.Migrations
 
                     b.Property<int>("StartLine")
                         .HasColumnType("int");
-
-                    b.Property<string>("VulnLinesJson")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("VulnTypeId")
                         .HasColumnType("int");
@@ -170,7 +170,7 @@ namespace Agent_Background_temporary.Migrations
                             Id = 1,
                             Description = "CSRF (Cross-Site Request Forgery) is a vulnerability where an attacker tricks a victim’s browser into sending unintended requests using the victim’s existing session or credentials.",
                             Severity = 3,
-                            VulnName = "CSRF"
+                            VulnName = "CSRF / Client-Side Attacks"
                         },
                         new
                         {
@@ -226,7 +226,7 @@ namespace Agent_Background_temporary.Migrations
                             Id = 9,
                             Description = "Cross-Site Scripting (XSS) is an injection flaw where attackers inject malicious scripts (usually JavaScript) into web pages viewed by others, leading to session theft, content tampering, or other client-side attacks.",
                             Severity = 3,
-                            VulnName = "XSS"
+                            VulnName = "XSS Injection"
                         });
                 });
 

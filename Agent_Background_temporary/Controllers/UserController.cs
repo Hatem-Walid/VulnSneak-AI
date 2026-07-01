@@ -92,10 +92,14 @@ public class UserController : ControllerBase
         if (!AccountService.VerifyPassword(user, user.Password, dto.CurrentPassword))
             return BadRequest(new { message = "Current password is incorrect." });
 
-        user.Password = AccountService.HashPassword(user, dto.NewPassword);
-        await Context.SaveChangesAsync();
+        if (!AccountService.VerifyPassword(user, user.Password, dto.NewPassword))
+        {
+            user.Password = AccountService.HashPassword(user, dto.NewPassword);
+            await Context.SaveChangesAsync();
 
-        return Ok(new { message = "Password changed successfully." });
+            return Ok(new { message = "Password changed successfully." });
+        }
+        return BadRequest(new {message = "you written the Same Current Password, Please write a different Password."});
     }
 
     // DELETE api/v1/User

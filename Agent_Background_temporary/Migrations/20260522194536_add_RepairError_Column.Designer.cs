@@ -4,6 +4,7 @@ using Agent_Background_temporary.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Agent_Background_temporary.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260522194536_add_RepairError_Column")]
+    partial class add_RepairError_Column
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +109,13 @@ namespace Agent_Background_temporary.Migrations
                     b.Property<string>("Explanation")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ExternalApiReport")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ModelUsed")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RepairCodeSnippet")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RepairError")
@@ -123,9 +132,6 @@ namespace Agent_Background_temporary.Migrations
 
                     b.Property<int>("StartLine")
                         .HasColumnType("int");
-
-                    b.Property<string>("VulnLinesJson")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("VulnTypeId")
                         .HasColumnType("int");

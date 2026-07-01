@@ -35,7 +35,7 @@ namespace Agent_Background_temporary.Configurations
                 new VulnType
                 {
                     Id = 1,
-                    VulnName = "CSRF / Client-Side Attacks",
+                    VulnName = "CSRF",
                     Description = "CSRF (Cross-Site Request Forgery) is a vulnerability where an attacker tricks a victim’s browser into sending unintended requests using the victim’s existing session or credentials.",
                     Severity = SeverityEnum.High
                 },
@@ -91,7 +91,7 @@ namespace Agent_Background_temporary.Configurations
                 new VulnType
                 {
                     Id = 9,
-                    VulnName = "XSS Injection",
+                    VulnName = "XSS",
                     Description = "Cross-Site Scripting (XSS) is an injection flaw where attackers inject malicious scripts (usually JavaScript) into web pages viewed by others, leading to session theft, content tampering, or other client-side attacks.",
                     Severity = SeverityEnum.High
                 });

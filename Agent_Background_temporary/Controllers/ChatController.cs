@@ -80,7 +80,7 @@ namespace Agent_Services.Controllers
                 chat.ChatFolderPath = chatFolderPath;
                 await Context.SaveChangesAsync();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Context.Chats.Remove(chat);
                 await Context.SaveChangesAsync();
@@ -129,7 +129,7 @@ namespace Agent_Services.Controllers
             return Ok(messageDtos);
         }
 
-        private static async Task<MessageDto> MapToMessageDtoAsync(ScanSession session)
+        public static async Task<MessageDto> MapToMessageDtoAsync(ScanSession session)
         {
             var messageDto = new MessageDto
             {
@@ -149,8 +149,14 @@ namespace Agent_Services.Controllers
                         StartLine = v.StartLine,
                         EndLine = v.EndLine,
                         CodeSnippet = v.CodeSnippet,
-                        RepairCodeSnippet = v.RepairCodeSnippet,
-                        ExternalApiReport = v.ExternalApiReport
+                        Confidence = v.Confidence,
+                        RepairedCode = v.RepairedCode,
+                        Explanation = v.Explanation,
+                        ModelUsed = v.ModelUsed,
+                        RepairSuccess = v.RepairSuccess,
+                        RepairError = v.RepairError,
+                        ElapsedSecs = v.ElapsedSecs,
+                        VulnLines = v.VulnLines,
                     })
                     .ToList() ?? new List<VulnDto>()
             };
@@ -211,7 +217,7 @@ namespace Agent_Services.Controllers
                 {
                     Directory.Delete(folderPath, recursive: true);
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     // DB record is already deleted — log the orphaned folder for manual cleanup
                     // _logger.LogWarning(ex, "Failed to delete chat folder at {Path} for chatId {ChatId}", folderPath, chatId);
