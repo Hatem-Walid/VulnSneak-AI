@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VulnSneak Dataset Schema",
+  "description": "Schema for vulnerable and secure code pairs used for AI-assisted vulnerability detection.",
+  "type": "object",
+  "properties": {
+    "vuln_code": {
+      "type": "string",
+      "description": "Source code containing a vulnerable implementation."
+    },
+    "state": {
+      "type": "string",
+      "description": "Vulnerability type.",
+      "enum": [
+        "SQL Injection",
+        "Cross Site Scripting (XSS)",
+        "Cross Site Request Forgery (CSRF)",
+        "XML Injection",
+        "Path Traversal",
+        "OS Command Injection",
+        "Insecure Deserialization",
+        "Insecure Cryptography"
+      ]
+    },
+    "safe_code": {
+      "type": "string",
+      "description": "Secure implementation of the vulnerable code."
+    },
+    "safe_code_label": {
+      "type": "string",
+      "const": "Safe",
+      "description": "Label identifying the secure code sample."
+    }
+  },
+  "required": [
+    "vuln_code",
+    "state",
+    "safe_code",
+    "safe_code_label"
+  ],
+  "additionalProperties": false
+}
