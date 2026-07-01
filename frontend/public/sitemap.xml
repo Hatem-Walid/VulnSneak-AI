@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://vulunsneak-ai.site/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحة About -->
+  <url>
+    <loc>https://vulunsneak-ai.site/About</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحة Auth -->
+  <url>
+    <loc>https://vulunsneak-ai.site/auth</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- صفحة Blog -->
+  <url>
+    <loc>https://vulunsneak-ai.site/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة ContactUs -->
+  <url>
+    <loc>https://vulunsneak-ai.site/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- صفحة Docs -->
+  <url>
+    <loc>https://vulunsneak-ai.site/doc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- صفحة FAQ -->
+  <url>
+    <loc>https://vulunsneak-ai.site/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- صفحة Plan -->
+  <url>
+    <loc>https://vulunsneak-ai.site/plan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحة SplineChat -->
+  <url>
+    <loc>https://vulunsneak-ai.site/ai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

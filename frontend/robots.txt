@@ -1,0 +1,6 @@
+# السماح لكل محركات البحث تزور كل الصفحات
+User-agent: *
+Disallow:
+
+# رابط الـ sitemap
+Sitemap: https://vulunsneak-ai.site/sitemap.xml

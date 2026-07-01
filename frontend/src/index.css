@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap');
+
+/* ==========================================================================
+   1. Tailwind v4 Variants
+   ========================================================================== */
+@variant light ([data-theme="light"] &);
+
+/* ==========================================================================
+   2. Base Styles & Theme Configurations
+   ========================================================================== */
+body {
+  background-color: #000000; /* خلفيتك الأصلية الداكنة */
+  color: #ffffff;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden; /* لمنع التمرير الجانبي */
+}
+
+html[data-theme="light"] body {
+  background-color: #f8f9fa; /* لون الخلفية الفاتحة الافتراضية */
+  color: #121212;
+}
+
+/* ==========================================================================
+   3. Keyframe Animations
+   ========================================================================== */
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-8px) scale(0.95); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+@keyframes toastFade {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-10px) scale(0.95); 
+  }
+  10% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+  90% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-10px) scale(0.95); 
+  }
+}
+
+/* ==========================================================================
+   4. Animation Utility Classes
+   ========================================================================== */
+.animate-toastFade {
+  animation: toastFade 3s ease-in-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}

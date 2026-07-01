@@ -1,0 +1,16 @@
+{
+  "name": "VulnSneak-AI",
+  "short_name": "VulnSneak",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0d1117",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ]
+}
