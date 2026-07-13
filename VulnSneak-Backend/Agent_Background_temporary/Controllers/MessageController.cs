@@ -356,7 +356,6 @@ namespace Agent_Background_temporary.Controllers
                 if (System.IO.File.Exists(filePath))
                     System.IO.File.Delete(filePath);
 
-                // ✅ مشكلة 2 — FirstOrDefaultAsync بدل ToString
                 var repairedFilePath = await Context.FileReports
                     .Where(FR => FR.ScanId == scanSession.Id)
                     .Select(FR => FR.FileReportPath)
